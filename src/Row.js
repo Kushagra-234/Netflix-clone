@@ -35,8 +35,7 @@ const Row = ({ title, fetchUrl, isLarge }) => {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      movieTrailer(movie?.name || "")
-        .then((url) => {
+      movieTrailer(movie?.name || "").then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
           // by this we can get value of v
@@ -44,7 +43,7 @@ const Row = ({ title, fetchUrl, isLarge }) => {
         .catch((error) => console.log(error));
     }
   };
-
+   console.log(movieTrailer);
   return (
     <div className="row">
       <h1>{title}</h1>
